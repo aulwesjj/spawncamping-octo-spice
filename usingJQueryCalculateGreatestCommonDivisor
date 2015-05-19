@@ -1,0 +1,74 @@
+@model MvcAngularJS.Models.CalculateGreatestCommonDivisor
+
+@{
+    ViewBag.Title = "Index";
+}
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/jqueryui")
+<script>
+    
+
+
+    $(document).ready(function () { 
+    $("#btnid").click(function () {
+        var x = $("#txtNumberOne").val();
+        var y = $("#txtNumberTwo").val();
+        var z = $("#txtDivisor").val();
+        $("#txtDivisor").val(egcd(x, y));
+    });
+    });
+    function egcd(a, b) {
+        if (a == 0)
+            return b;
+
+        while (b != 0) {
+            if (a > b)
+                a = a - b;
+            else
+                b = b - a;
+        }
+
+        return a;
+    }
+    
+</script>
+<div id="body">
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>Welcome!</h1>
+                <h2>Calculate Greatest Common Divisor</h2>
+            </hgroup>
+            <table>
+                <tr>
+                    <td>
+                        Number 1:
+                    </td>
+                    <td>
+                        <input type="text" id="txtNumberOne"  width="100" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Number 2:
+                    </td>
+                    <td>
+                        <input type="text" id="txtNumberTwo"  width="100" />
+                        </td> 
+                    </tr> 
+                    <tr>
+                        <td>
+                            Result:
+                        </td>
+                        <td>
+                            <input type="text" id="txtDivisor"  width="100" />
+                        </td> 
+                   </tr>
+                <tr>
+                    <td></td>
+                    <td><button id="btnid" >Calculate</button></td>
+                </tr>
+            </table>
+        </div>
+    </section>
+</div>
