@@ -1,0 +1,34 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+using MvcAngularJS.Models;
+
+namespace MvcAngularJS.Controllers
+{
+    public class HomeController : Controller
+    {
+        public ActionResult Index()
+        {
+            var calc = new CalculateGreatestCommonDivisor();
+            return View(calc);
+        }
+
+        public ActionResult Result()
+        {
+            var calc = new CalculateGreatestCommonDivisor();
+            return View(calc);
+        }
+
+        [HttpPost]
+        public ActionResult Calculated(CalculateGreatestCommonDivisor calc)
+        {
+            return View(calc);
+        }
+        public ActionResult AngularView()
+        {
+            return View();
+        }
+    }
+}
