@@ -1,0 +1,28 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Numerics;
+
+namespace MvcAngularJS.Models
+{
+    public class CalculateGreatestCommonDivisor
+    {
+        public string sNumberOne { get; set; }
+        public string sNumberTwo { get; set; }
+
+
+        
+
+        public string iDivisor()
+        {
+            int iOne = 0; iOne = Convert.ToInt32(sNumberOne);
+            int iTwo = 0; iTwo = Convert.ToInt32(sNumberTwo);
+            return Convert.ToString(BigInteger.GreatestCommonDivisor(iOne, iTwo));
+
+
+        }
+    }
+    
+}
