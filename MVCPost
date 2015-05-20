@@ -1,0 +1,56 @@
+@model MvcAngularJS.Models.CalculateGreatestCommonDivisor
+
+@{
+    ViewBag.Title = "Result";
+} 
+
+<div id="body" >    
+@using (Html.BeginForm("Calculated", "Home"))
+{
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>Welcome!</h1>
+                <h2>Calculate Greatest Common Divisor</h2>
+            </hgroup>
+            <table>
+                <tr>
+                    <td>
+                        Number 1:
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(m => m.sNumberOne)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Number 2:
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(m => m.sNumberTwo)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Result:
+                    </td>
+                    <td>
+                        <input type="text" value="@Model.iDivisor()"  width="100" />
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <input type="submit" value="Submit" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </section>
+    }
+</div>
+    <!-- Dependencies -->
+<script type="text/javascript" src="~/Scripts/angular.js"></script>
+
+<!-- App -->
+<script type="text/javascript" src="~/JS/Calculator.js"></script>
