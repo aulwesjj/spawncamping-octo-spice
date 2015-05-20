@@ -1,0 +1,51 @@
+@model MvcAngularJS.Models.CalculateGreatestCommonDivisor
+
+@{
+    ViewBag.Title = "Result";
+}
+
+<div id="body" ng-controller="CalculatorController">
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>Welcome!</h1>
+                <h2>Calculate Greatest Common Divisor</h2>
+            </hgroup>
+            <table>
+                <tr>
+                    <td>
+                        Number 1:
+                    </td>
+                    <td>
+                        <input type="text" ng-model="displayValueNumberOne" width="100" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Number 2:
+                    </td>
+                    <td>
+                        <input type="text" ng-change="onClickCalculate()" ng-model="displayValueNumberTwo" width="100" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Result:
+                    </td>
+                    <td>
+                        <input type="text" ng-change="onClickCalculate()" ng-model="displayValue" width="100" />
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><button class="btn" type="button" ng-click="onClickCalculate()">Calculate</button></td>
+                </tr>
+            </table>
+        </div>
+    </section>
+</div>
+    <!-- Dependencies -->
+<script type="text/javascript" src="~/Scripts/angular.js"></script>
+
+<!-- App -->
+<script type="text/javascript" src="~/JS/Calculator.js"></script>
