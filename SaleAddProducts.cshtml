@@ -1,0 +1,33 @@
+
+<h2>Sale: Add Products</h2>
+<div ng-controller="SaleAddProductsController">
+    <form novalidate class="simple-form">
+        Name: <input type="text" ng-model="sale.CustomerName" /><br />
+        Date: <input type="date" ng-model="sale.SaleDate" /><br />
+
+        Product: <select class="select" ng-model="selectedProduct" class="form-control" ng-options="product.name for product in productlist">
+            <option disabled value="">-- choose product --</option>
+            Select Product
+            </option>
+        </select>
+        <button class="btn btn-primary btn-xs" ng-click="addProductSales()">Add</button>
+        {{message}}
+        <table class="table-striped">
+            <tr ng-repeat="ps in ProductSales track by $index">
+                <td>{{ps.name}}</td>
+                <td>&nbsp;</td>
+                <td><button class="btn btn-danger btn-xs" ng-click="remove(ps)">remove</button></td>
+            </tr>
+        </table>
+        <input class="btn btn-primary btn-xs" type="button" ng-click="reset()" value="Reset" />
+        <input class="btn btn-primary btn-xs" type="submit" ng-click="update(user)" value="Save" />
+    </form>
+</div>
+
+@section scripts{
+
+    <script type="text/javascript" src="~/Scripts/angular.js"></script>
+    <!-- App -->
+    <script type="text/javascript" src="~/JS/SaleAddProducts.js"> </script>
+
+}
